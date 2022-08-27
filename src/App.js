@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { useSelector,useDispatch } from "react-redux";
+import {IncNumber,DcrNumber} from "./actions/index";
+import { Multiply,Divide } from "./actions/index";
 
-function App() {
+const App =() =>{
+
+const myState=useSelector((state)=>state.changeNumber);
+const mysState=useSelector((state=>state.changeNumberr));
+const dispatch=useDispatch();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+       <div className="container">
+         <h1>Increment/Decrement operation</h1>
+         <h4>Using React and redux</h4>
+
+         <div className="quantity">
+           <a className="quantity__minus" title="Decrement" onClick={()=> dispatch(DcrNumber())}>
+             <span>-</span>
+           </a>
+           <input name="quantity" type="text" className="quantity__input" value={myState}/>
+           <a className="quantity__plus" title="Increment" onClick={()=> dispatch(IncNumber(5))}>
+             <span>+</span>
+           </a>
+         </div>
+       </div>
+
+       <div className="container my-5" >
+         <h1>Mulitplication/Divide operation</h1>
+         <h4>Using React and redux</h4>
+
+         <div className="quantity">
+           <a className="quantity__minus" title="Decrement" onClick={()=> dispatch(Divide())}>
+             <span>/</span>
+           </a>
+           <input name="quantity" type="text" className="quantity__input" value={mysState}/>
+           <a className="quantity__plus" title="Increment" onClick={()=> dispatch(Multiply(5))}>
+             <span>*</span>
+           </a>
+         </div>
+       </div>
+    </>
   );
+
 }
 
 export default App;
