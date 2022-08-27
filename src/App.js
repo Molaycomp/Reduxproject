@@ -13,7 +13,7 @@ const dispatch=useDispatch();
   return (
     <>
        <div className="container">
-         <h1>Increment/Decrement operation</h1>
+         <h1>Increment/Decrement operation for checking</h1>
          <h4>Using React and redux</h4>
 
          <div className="quantity">
