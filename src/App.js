@@ -28,7 +28,7 @@ const dispatch=useDispatch();
        </div>
 
        <div className="container my-5" >
-         <h1>Mulitplication/Divide operation</h1>
+         <h1>Mulitplication/Divide operation for checking</h1>
          <h4>Using React and redux</h4>
 
          <div className="quantity">
