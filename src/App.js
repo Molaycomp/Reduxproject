@@ -10,6 +10,8 @@ const myState=useSelector((state)=>state.changeNumber);
 const mysState=useSelector((state=>state.changeNumberr));
 const dispatch=useDispatch();
 
+const c=10;
+
   return (
     <>
        <div className="container">
